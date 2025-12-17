@@ -6,9 +6,8 @@
   --border: rgba(255, 255, 255, 0.08);
   --text-main: #ffffff;
   --text-dim: #a1a1aa;
-  --section-spacing: 64px; 
+  --gap-between-sections: 60px; 
 }
-
 
 * {
   margin: 0;
@@ -23,40 +22,47 @@ body {
   display: flex;
   justify-content: center;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  padding: 0 24px;
 }
 
-
+/* --- Layout Container --- */
 .portfolio-wrapper {
-  max-width: 700px;
+  max-width: 830px;
   width: 100%;
-  padding: 100px 20px; 
+  padding: 40px 0 120px 0;
   display: flex;
   flex-direction: column;
+   gap: var(--gap-between-sections); 
+}
+
+.skill-part{
+  display: flex;
+  flex-direction: column;
+
 }
 
 
-.hero-container,
-.about-section,
-.skills-section {
-  width: 100%;
-  margin-bottom: var(--section-spacing);
-}
-
-
+/* --- Hero Section --- */
 .hero-container {
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-bottom: 20px;
 }
 
 .profile-img {
-  width: 110px;
-  height: 110px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 1px solid var(--border);
   object-fit: cover;
   flex-shrink: 0;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .hero-info h1 {
@@ -65,34 +71,70 @@ body {
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.05em;
+  margin: 0;
 }
 
 .tagline {
   font-size: 1.1rem;
-  margin: 8px 0 16px 0;
   color: var(--text-dim);
+  margin: 0;
 }
 
+.command-bar {
+  display: inline-flex;
+  align-items: center;
+  background: #161616;
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #eeeeee;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.command-bar:hover {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- About Section --- */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
 .section-title {
   color: var(--text-main);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 20px; 
+  margin-top: 10px;
+  /* margin: 10; */
 }
 
 .about-text {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-dim);
+  margin: 0;
 }
 
+/* --- Skills Section --- */
+.section-title-skill {
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
 
 .skills-bento-box {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 28px;
-  padding: 40px 0; 
+  padding: 30px 0; 
   overflow: hidden;
   position: relative;
   display: flex;
@@ -139,19 +181,7 @@ body {
   100% { transform: translateX(-50%); }
 }
 
-
-.command-bar {
-  display: inline-flex;
-  align-items: center;
-  background: #161616;
-  border: 1px solid var(--border);
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  color: #eeeeee;
-  font-family: monospace;
-}
-
+/* --- Nav Dock --- */
 .nav-dock {
   position: fixed;
   bottom: 30px;
@@ -159,7 +189,6 @@ body {
   transform: translateX(-50%);
   background: rgba(18, 18, 18, 0.8);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   padding: 12px 24px;
   border-radius: 20px;
@@ -176,7 +205,8 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   opacity: 0.6;
-  transition: 0.2s;
+  transition: all 0.2s;
+  padding: 4px;
 }
 
 .nav-dock button:hover {
@@ -184,11 +214,56 @@ body {
   transform: translateY(-2px);
 }
 
-
+/* --- Responsive Design --- */
 @media (max-width: 640px) {
-  .portfolio-wrapper { padding-top: 60px; }
-  .hero-container { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .hero-info h1 { font-size: 2.2rem; }
-  .marquee-content { gap: 2.5rem; animation-duration: 15s; }
-  :root { --section-spacing: 48px; } 
+  body {
+    padding: 0 20px;
+  }
+
+  .portfolio-wrapper {
+    padding: 40px 0 120px 0;
+    gap: 48px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .marquee-content {
+    gap: 2.5rem;
+    animation-duration: 15s;
+  }
+
+  .nav-dock {
+    bottom: 20px;
+    padding: 10px 20px;
+    gap: 12px;
+  }
+
+  .nav-dock button {
+    font-size: 1.1rem;
+  }
 }

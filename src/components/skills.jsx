@@ -14,8 +14,8 @@ const techIcons = [
 
 export default function Skills() {
   return (
-    <section className="portfolio-wrapper">
-      <h2 className="section-title">Skills</h2>
+    <section className="skill-part">
+      <h2 className="section-title-skill">Skills</h2>
       
       <div className="skills-bento-box">
         <div className="marquee-container">

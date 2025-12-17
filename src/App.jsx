@@ -7,14 +7,14 @@ function App() {
     <div className="portfolio-wrapper">
       <Hero />
       
-      <section style={{marginBottom: '0px'}}>
-        <h2 style={{color: 'white', fontSize: '1.1rem', marginBottom: '1rem'}}>About</h2>
-        <p style={{lineHeight: '1.7', fontSize: '1.05rem'}}>
-          I'm a CS student focused on building clean, functional applications. 
-          I love exploring how things work under the hood. When I'm not coding, 
-          you'll probably find me reading or messing around with new designs.
+      {/* ADDED THE CLASS NAME HERE */}
+      <section className="about-section">
+        <h2 className="section-title">About</h2>
+        <p className="about-text">
+          I’m a 20-year-old CS student. I’m all about building things with code, breaking them down, and making them better. I’ve always had an interest in art, but I’m more focused on creating stuff that actually works and solving problems with technology. Robots catch my attention, and I love figuring out how they work. When I’m not coding, you’ll probably find me reading or messing around with my Japanese studies.
         </p>
       </section>
+
       <Skills />
 
       <nav className="nav-dock">
