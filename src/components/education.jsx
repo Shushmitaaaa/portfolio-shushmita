@@ -1,15 +1,23 @@
 export default function Education() {
   return (
-    <section className="education-section">
+    <section className="education-section" style={{marginTop: '20px'}}>
       <p className="section-title">Education</p>
-      <div className="edu-container">
-        <div className="edu-card">
-          <div className="edu-info">
-            <h4>B.Tech in Computer Science</h4>
-            <p>Your University Name</p>
+      
+      <div className="simple-item">
+        <div className="item-main-row">
+          <div className="org-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQQRGJJssRA5GFHJDAGWIbJOmlfdfUGSp0Q&s" alt="College" />
           </div>
-          <div className="edu-meta">
-            <span>2022 — 2026</span>
+          <div className="item-info">
+            <div className="item-header-top">
+              <div className="title-group">
+                <h3>Cambridge Institute Of Technology</h3>
+                <span className="org-name">B.Tech in Artificial Intelligence and Machine Learning</span>
+              </div>
+              <span className="item-date">2023 — 2027 <br />CGPA:9.1/10</span>
+            </div>
+            <p className="about-text" style={{fontSize: '0.85rem', marginTop: '4px'}}>
+            </p>
           </div>
         </div>
       </div>

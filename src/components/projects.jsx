@@ -8,7 +8,8 @@ const projectList = [
   { name: "CHUG", category: "fun", year: "2024", tags: ["SQL", "ETL"], desc: "A quirky, high-speed data sync tool for moving PostgreSQL records into ClickHouse analytics.", image: "https://images.unsplash.com/photo-1551288049-bbbda536ad89?auto=format&fit=crop&w=600" },
   { name: "UptimeX", category: "fun", year: "2023", tags: ["Next.js", "SSL"], desc: "A clean dashboard for monitoring server health with native Discord and Telegram webhooks.", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600" },
   { name: "ZenTab", category: "fun", year: "2024", tags: ["JS", "Design"], desc: "A browser extension that replaces your new tab with generative art and a focus timer.", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600" },
-  { name: "MochiSynth", category: "fun", year: "2025", tags: ["Python", "DSP"], desc: "A digital synthesizer that converts hand movements via webcam into lo-fi beats.", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600" }
+  { name: "MochiSynth", category: "fun", year: "2025", tags: ["Python", "DSP"], desc: "A digital synthesizer that converts hand movements via webcam into lo-fi beats.", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600" },
+  { name: "Grit", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" }
 ];
 
 export default function Projects() {
@@ -23,10 +24,16 @@ export default function Projects() {
   );
 
   return (
-    <section className="projects-section">
-      <h2 className="section-title">Projects</h2>
+    
+      <section className="projects-section">
+        <div className="projects-header">
+            <h2 className="header-title">Check out my latest work</h2>
+            <p className="header-subtitle">
+            I've worked on a variety of projects, here are some that I like.
+            </p>
+        </div>
 
-      {/* --- COMMAND CENTER (The Box Styling) --- */}
+     
       <div className="command-center-box">
         <div className="search-wrapper">
           <span className="terminal-prefix">$</span>
@@ -52,7 +59,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* --- DYNAMIC VIEWPORT --- */}
+      
       <div className={`viewport-${layout}`}>
         {filteredProjects.map((proj) => (
           <div key={proj.name} className={`${layout}-item smooth-reveal`}>
