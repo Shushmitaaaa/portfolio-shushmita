@@ -27,7 +27,7 @@ export default function Projects() {
     
       <section className="projects-section">
         <div className="projects-header">
-          <div className="contact-badge" style={{ alignSelf: 'center', width: 'fit-content' }}>
+          <div className="contactt-badge" style={{ alignSelf: 'center', width: 'fit-content' }}>
             Proof of Work
           </div>
             <h2 className="header-title">Check out my latest work</h2>

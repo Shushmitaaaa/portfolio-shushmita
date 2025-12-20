@@ -56,30 +56,30 @@ function App() {
       <Projects />   
 
       <section className="writings-section">
-  <div className="writing-header">
-    <span className="contact-badge">WRITINGS</span>
-    <h2 className="header-title">Born to be a writer forced to be an engineer :/</h2>
-  </div>
-
-    <div className="writings-thread">
-      {writings.map((post, index) => (
-        <div key={index} className="thread-item">
-          <div className="thread-line">
-            <div className="thread-dot"></div>
-          </div>
-          <a href={post.link} target="_blank" className="writing-card-vertical">
-            <div className="card-header">
-              <span className="writing-tag">{post.tag}</span>
-              <span className="writing-date">{post.date}</span>
-            </div>
-            <h3 className="writing-card-title">{post.title}</h3>
-            <p className="writing-excerpt">{post.excerpt}</p>
-            <div className="read-link">Read full answer on Quora →</div>
-          </a>
+        <div className="writing-header">
+          <span className="contact-write-badge">WRITINGS</span>
+          <h2 className="header-title">Born to be a writer forced to be an engineer :/</h2>
         </div>
-      ))}
-    </div>
-  </section>
+
+        <div className="writings-thread">
+          {writings.map((post, index) => (
+            <div key={index} className="thread-item">
+              <div className="thread-line">
+                <div className="thread-dot"></div>
+              </div>
+              <a href={post.link} target="_blank" className="writing-card-vertical">
+                <div className="card-header">
+                  <span className="writing-tag">{post.tag}</span>
+                  <span className="writing-date">{post.date}</span>
+                </div>
+                <h3 className="writing-card-title">{post.title}</h3>
+                <p className="writing-excerpt">{post.excerpt}</p>
+                <div className="read-link">Read full answer on Quora →</div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="contact-section">
           <div className="contact-badge">Contact</div>
