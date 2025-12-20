@@ -9,7 +9,7 @@ const projectList = [
   { name: "UptimeX", category: "fun", year: "2023", tags: ["Next.js", "SSL"], desc: "A clean dashboard for monitoring server health with native Discord and Telegram webhooks.", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600" },
   { name: "ZenTab", category: "fun", year: "2024", tags: ["JS", "Design"], desc: "A browser extension that replaces your new tab with generative art and a focus timer.", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600" },
   { name: "MochiSynth", category: "fun", year: "2025", tags: ["Python", "DSP"], desc: "A digital synthesizer that converts hand movements via webcam into lo-fi beats.", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600" },
-  { name: "Grit", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" }
+  // { name: "Grit", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" }
 ];
 
 export default function Projects() {
@@ -27,6 +27,9 @@ export default function Projects() {
     
       <section className="projects-section">
         <div className="projects-header">
+          <div className="contact-badge" style={{ alignSelf: 'center', width: 'fit-content' }}>
+            Proof of Work
+          </div>
             <h2 className="header-title">Check out my latest work</h2>
             <p className="header-subtitle">
             I've worked on a variety of projects, here are some that I like.

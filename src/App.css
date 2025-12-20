@@ -105,12 +105,12 @@ body {
 
 /* --- About Section --- */
 .section-title {
-  margin-top: 10px;
+  margin-top: 5px !important;
   color: var(--text-main);
   font-size: 1.2rem !important; 
   font-weight: 600;
   letter-spacing: 0.05em;
-  margin-bottom: 4px !important; 
+  margin-bottom: 2px !important; 
 }
 
 /* Fix About Section Spacing */
@@ -118,7 +118,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0px !important; 
-  margin-bottom: 10px;
+  margin-bottom: 19px;
 }
 
 .about-text {
@@ -257,10 +257,11 @@ body {
 
 .projects-header {
   text-align: center;
-  margin-bottom: 40px; 
+  margin-bottom: 30px; 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px; /* Reduced gap to keep badge closer to title */
+  align-items: center;
 }
 
 .header-title {
@@ -276,6 +277,18 @@ body {
   max-width: 600px;
   margin: 0 auto; 
   line-height: 1.5;
+}
+
+.contact-badge {
+  background: var(--text-main);
+  color: var(--bg);
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* margin-bottom: 3px;  */
+  letter-spacing: 0.05em;
 }
 
 
@@ -441,7 +454,7 @@ body {
 .simple-item {
   width: 100%;
   padding: 10px 0;
-  margin-bottom: 0px !important;
+  margin-bottom: -15px ;
 }
 
 .item-main-row {
@@ -497,7 +510,7 @@ body {
 
 
 .writings-section {
-  padding: 60px 0; 
+  padding: 40px 0 0 0; 
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -506,7 +519,7 @@ body {
 
 .writing-header {
   text-align: center;
-  margin-bottom: 60px; 
+  margin-bottom: 50px; 
 }
 
 
@@ -584,6 +597,11 @@ body {
   margin-bottom: 12px;
 }
 
+.contact-badge{
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
 .writing-tag {
   font-size: 0.65rem;
   font-weight: 800;
@@ -647,8 +665,9 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 90px 0 90px 0; 
+  padding: 90px 0 100px 0; 
   width: 100%;
+  margin-left: -35px;
 }
 
 .contact-badge {
