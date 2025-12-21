@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 const projectList = [
-  { name: "Grit", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" },
-  { name: "PixTorrent", category: "major", year: "2024", tags: ["Go", "P2P"], desc: "Distributed peer-to-peer file sharing system implementing the core BitTorrent protocol from scratch.", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600" },
-  { name: "Vaultify", category: "major", year: "2024", tags: ["Rust", "Security"], desc: "End-to-end encrypted secrets management tool with an emphasis on speed and developer experience.", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600" },
-  { name: "NebulaDB", category: "major", year: "2023", tags: ["C++", "Storage"], desc: "A custom LSM-tree based key-value store optimized for high-write throughput environments.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=600" },
-  { name: "CHUG", category: "fun", year: "2024", tags: ["SQL", "ETL"], desc: "A quirky, high-speed data sync tool for moving PostgreSQL records into ClickHouse analytics.", image: "https://images.unsplash.com/photo-1551288049-bbbda536ad89?auto=format&fit=crop&w=600" },
-  { name: "UptimeX", category: "fun", year: "2023", tags: ["Next.js", "SSL"], desc: "A clean dashboard for monitoring server health with native Discord and Telegram webhooks.", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600" },
-  { name: "ZenTab", category: "fun", year: "2024", tags: ["JS", "Design"], desc: "A browser extension that replaces your new tab with generative art and a focus timer.", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600" },
-  { name: "MochiSynth", category: "fun", year: "2025", tags: ["Python", "DSP"], desc: "A digital synthesizer that converts hand movements via webcam into lo-fi beats.", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600" },
+  { name: "SusJobs", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" },
+  { name: "TubeTales", category: "major", year: "2024", tags: ["Go", "P2P"], desc: "Distributed peer-to-peer file sharing system implementing the core BitTorrent protocol from scratch.", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600" },
+  { name: "DocBot", category: "major", year: "2024", tags: ["Rust", "Security"], desc: "End-to-end encrypted secrets management tool with an emphasis on speed and developer experience.", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600" },
+  { name: "MovieHunt", category: "major", year: "2023", tags: ["C++", "Storage"], desc: "A custom LSM-tree based key-value store optimized for high-write throughput environments.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=600" },
+  { name: "User-authentication-app", category: "fun", year: "2024", tags: ["SQL", "ETL"], desc: "A quirky, high-speed data sync tool for moving PostgreSQL records into ClickHouse analytics.", image: "https://images.unsplash.com/photo-1551288049-bbbda536ad89?auto=format&fit=crop&w=600" },
+  { name: "BMI-calculator", category: "fun", year: "2023", tags: ["Next.js", "SSL"], desc: "A clean dashboard for monitoring server health with native Discord and Telegram webhooks.", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600" },
+  { name: "Gmail-cleaner-cli", category: "fun", year: "2024", tags: ["JS", "Design"], desc: "A browser extension that replaces your new tab with generative art and a focus timer.", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600" },
+  { name: "Tic-Tac-Toe", category: "fun", year: "2025", tags: ["Python", "DSP"], desc: "A digital synthesizer that converts hand movements via webcam into lo-fi beats.", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600" },
   // { name: "Grit", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" }
 ];
 
@@ -27,7 +27,7 @@ export default function Projects() {
     
       <section className="projects-section">
         <div className="projects-header">
-          <div className="contactt-badge" style={{ alignSelf: 'center', width: 'fit-content' }}>
+          <div className="contactt-badge" >
             Proof of Work
           </div>
             <h2 className="header-title">Check out my latest work</h2>

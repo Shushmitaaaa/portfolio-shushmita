@@ -40,10 +40,13 @@ function App() {
       <Hero />
       
       
-      <section className="about-section" style={{marginTop:12}}>
+      <section className="about-section" >
         <p className="section-title" >About</p>
         <p className="about-text">
-          I’m a 20-year-old CS student. I’m all about building things with code, breaking them down, and making them better. I’ve always had an interest in art, but I’m more focused on creating stuff that actually works and solving problems with technology. Robots catch my attention, and I love figuring out how they work. When I’m not coding, you’ll probably find me reading or messing around with my Japanese studies.
+          I like building things with code and figuring out how they actually work.
+          Right now, I’m deep into machine learning and the magic of teaching machines to think.
+          I love working on projects that feel real, not just done for the sake of it.
+          When I’m not coding, I’m usually writing messy, honest stuff on Quora or Medium, very active on X.
         </p>
       </section>
 
