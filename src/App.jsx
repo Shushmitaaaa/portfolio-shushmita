@@ -17,19 +17,19 @@ function App() {
 
   const writings = [
     {
-      title: "What did I do with my first salary?",
+      title: "First Salary",
       excerpt: "A reflection on milestones, financial independence, and that first taste of hard-earned reward...",
       link: "https://quora.com/your-link-1",
       date: "Nov 2024"
     },
     {
-      title: "What do you want to become in your life?",
+      title: "Hidden Aspiration",
       excerpt: "Beyond titles and career ladders—finding the intersection of passion, purpose, and tech.",
       link: "https://quora.com/your-link-2",
       date: "Sept 2024"
     },
     {
-      title: "What is love?",
+      title: "Love",
       excerpt: "Exploring the most complex human emotion through the lens of logic, art, and life experience.",
       link: "https://quora.com/your-link-3",
       date: "Jan 2025"
@@ -60,8 +60,8 @@ function App() {
 
       <section className="writings-section">
         <div className="writing-header">
-          <span className="contact-write-badge">WRITINGS</span>
-          <h2 className="header-title">Born to be a writer forced to be an engineer :/</h2>
+          <span className="contact-write-badge">Blogs</span>
+          <h2 className="header-title">Sometimes, I write.</h2>
         </div>
 
         <div className="writings-thread">
