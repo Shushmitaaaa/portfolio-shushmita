@@ -77,7 +77,7 @@ function App() {
                 </div>
                 <h3 className="writing-card-title">{post.title}</h3>
                 <p className="writing-excerpt">{post.excerpt}</p>
-                <div className="read-link">Read full answer on Quora →</div>
+                <div className="read-link">Read →</div>
               </a>
             </div>
           ))}
