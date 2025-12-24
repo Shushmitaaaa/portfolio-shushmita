@@ -9,21 +9,20 @@ import cliImg from '../assets/clii.png';
 
 
 const projectList = [
-  { name: "SusJobs", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: susJobsImg,website:"susjobs-3.onrender.com"},
-  { name: "TubeTales", category: "major", year: "2025", tags: ["Python","Flask","Groq","Javascript","Llama 3"], desc: "An AI-Powered YouTube video Summarizer using LLaMA 3 (70B) on Groq LLM.", image: ttImg,github:"https://github.com/Shushmitaaaa/Tubetales.git",website:"https://tubetales-1.onrender.com/" },
-  { name: "DocBot", category: "major", year: "2025", tags: ["Rust", "Security"], desc: "An AI-powered medical chatbot that predicts possible diseases based on user symptoms", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600",github:"https://github.com/Shushmitaaaa/DocBot.git",website:"https://github.com/Shushmitaaaa/DocBot.git" },
-  { name: "MovieHunt", category: "major", year: "2025", tags: ["React.js", "JavaScript","TMDB API","Appwrite"], desc: "A movie search app which helps in searching for a specific movies based on some filters.", image: moviehuntImg,github:"https://github.com/Shushmitaaaa/MovieHunt.git",website:"movie-hunt-ksh2.vercel.app/" },
-  { name: "Predictra", category: "fun", year: "2025", tags: ["HTML", "CSS","JavaScipt"], desc: "PREDICTRA uses machine learning to predict your placement chances based on your academics, skills, and projects.", image: pImg,github:"https://github.com/Shushmitaaaa/Tic-Tac-Toe.git",website:" https://shushmitaaaa.github.io/Tic-Tac-Toe/" },
-  { name: "User-authentication-app", category: "fun", year: "2024", tags: ["SQL", "ETL"], desc: "A simple user authentication app that supports user signup, login, and protected routes using middleware-based authentication.", image: authImg,github:"https://github.com/Shushmitaaaa/user-authentication-app.git",website:"user-authentication-apps.onrender.com" },
-  { name: "BMI-calculator", category: "fun", year: "2025", tags: ["HTML", "CSS","JavaScript"], desc: " Enter your height and weight to get your BMI along with a color-coded chart indicating your health category.", image:bmiImg,github:"https://github.com/Shushmitaaaa/BMI-calculator.git",website:" https://shushmitaaaa.github.io/BMI-calculator/" },
-  { name: "Gmail-cleaner-cli", category: "fun", year: "2025", tags: ["JS", "Design"], desc: "A command-line tool to declutter your Gmail inbox by deleting or summarizing emails based on filters", image: cliImg ,github:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git",website:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git"},
-  // { name: "Tic-Tac-Toe", category: "fun", year: "2025", tags: ["HTML", "CSS","JavaScipt"], desc: "Interactive Tic Tac Toe game with clean UI and smooth gameplay", image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600",github:"https://github.com/Shushmitaaaa/Tic-Tac-Toe.git",website:" https://shushmitaaaa.github.io/Tic-Tac-Toe/" },
-  // { name: "Grit", category: "major", year: "2025", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=600" }
+  { name: "SusJobs", category: "major", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: susJobsImg,website:"susjobs-3.onrender.com"},
+  { name: "TubeTales", category: "major", tags: ["Python","Flask","Groq","Javascript","Llama 3"], desc: "An AI-Powered YouTube video Summarizer using LLaMA 3 (70B) on Groq LLM.", image: ttImg,github:"https://github.com/Shushmitaaaa/Tubetales.git",website:"https://tubetales-1.onrender.com/" },
+  { name: "DocBot", category: "major", tags: ["Rust", "Security"], desc: "An AI-powered medical chatbot that predicts possible diseases based on user symptoms", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600",github:"https://github.com/Shushmitaaaa/DocBot.git",website:"https://github.com/Shushmitaaaa/DocBot.git" },
+  { name: "MovieHunt", category: "major", tags: ["React.js", "JavaScript","TMDB API","Appwrite"], desc: "A movie search app which helps in searching for a specific movies based on some filters.", image: moviehuntImg,github:"https://github.com/Shushmitaaaa/MovieHunt.git",website:"movie-hunt-ksh2.vercel.app/" },
+  { name: "Predictra", category: "fun", tags: ["HTML", "CSS","JavaScipt"], desc: "PREDICTRA uses machine learning to predict your placement chances based on your academics, skills, and projects.", image: pImg,github:"https://github.com/Shushmitaaaa/Tic-Tac-Toe.git",website:" https://shushmitaaaa.github.io/Tic-Tac-Toe/" },
+  { name: "Gmail-cleaner-cli", category: "fun", tags: ["JS", "Design"], desc: "A command-line tool to declutter your Gmail inbox by deleting or summarizing emails based on filters", image: cliImg ,github:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git",website:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git"},
+  { name: "User-authentication-app", category: "fun", tags: ["SQL", "ETL"], desc: "A simple user authentication app that supports user signup, login, and protected routes using middleware-based authentication.", image: authImg,github:"https://github.com/Shushmitaaaa/user-authentication-app.git",website:"user-authentication-apps.onrender.com" },
+  { name: "BMI-calculator", category: "fun", tags: ["HTML", "CSS","JavaScript"], desc: " Enter your height and weight to get your BMI along with a color-coded chart indicating your health category.", image:bmiImg,github:"https://github.com/Shushmitaaaa/BMI-calculator.git",website:" https://shushmitaaaa.github.io/BMI-calculator/" },
+  
 ];
 
 export default function Projects() {
   const [view, setView] = useState('major'); 
-  const [layout, setLayout] = useState('grid');
+  // const [layout, setLayout] = useState('grid');
   const [search, setSearch] = useState('');
 
   const filteredProjects = projectList.filter(p => 
@@ -51,7 +50,7 @@ export default function Projects() {
           <span className="terminal-prefix">$</span>
           <input 
             type="text" 
-            placeholder="filter_projects..." 
+            placeholder="Search projects" 
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -64,17 +63,17 @@ export default function Projects() {
             <button className={view === 'fun' ? 'active' : ''} onClick={() => setView('fun')}>Fun</button>
           </div>
 
-          <div className="layout-switcher">
+          {/* <div className="layout-switcher">
             <button className={layout === 'grid' ? 'active' : ''} onClick={() => setLayout('grid')}>⊞</button>
             <button className={layout === 'list' ? 'active' : ''} onClick={() => setLayout('list')}>≡</button>
-          </div>
+          </div> */}
         </div>
-      </div>
+      </div> 
 
       
-      <div className={`viewport-${layout}`}>
+      <div className={`viewport-grid`}>
         {filteredProjects.map((proj) => (
-          <div key={proj.name} className={`${layout}-item smooth-reveal`}>
+          <div key={proj.name} className={`grid-item smooth-reveal`}>
             <div className="item-img">
                <img src={proj.image} alt={proj.name} />
             </div>
@@ -90,7 +89,8 @@ export default function Projects() {
                 </div>
               </div>
 
-              {layout === 'grid' && <p className="item-desc">{proj.desc}</p>}
+              {/* {layout === 'grid' && <p className="item-desc">{proj.desc}</p>} */}
+              <p className="item-desc">{proj.desc}</p>
               
               <div className="project-links">
                 {proj.github && (

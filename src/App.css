@@ -379,6 +379,7 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .toggle-pill, .layout-switcher {
@@ -411,7 +412,7 @@ body {
   transform: translateX(100%); 
 }
 
-.toggle-pill button, .layout-switcher button {
+.toggle-pill button {
   flex: 1;
   background: none; 
   border: none;
@@ -427,7 +428,7 @@ body {
   color: #000; 
 }
 
-.layout-switcher button { 
+/* .layout-switcher button { 
   padding: 4px 10px; 
   font-size: 1rem; 
 }
@@ -436,7 +437,7 @@ body {
   background: #1a1a1a; 
   color: #fff; 
   border-radius: 6px; 
-}
+} */
 
 .viewport-grid {
   display: grid;
@@ -1101,8 +1102,8 @@ body {
   }
 
   .toggle-pill {
-    width: 100px !important; 
-    height: 30px !important;
+    width: 120px !important; 
+    height: 32px !important;
     /* margin: 0 !important; */
     margin-left: 22px;
     /* margin-right: -30px; */
