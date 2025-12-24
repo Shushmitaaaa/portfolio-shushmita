@@ -153,7 +153,7 @@ body {
 }
 
 .marquee-container {
-  width: 100%;
+  /* width: 100%;
   display: flex;
   overflow: hidden;
   mask-image: linear-gradient(
@@ -163,21 +163,45 @@ body {
     black 85%,
     transparent
   );
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Fades the edges so icons don't just 'pop' out of existence */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .marquee-content {
-  display: flex;
+  /* display: flex;
   gap: 4rem; 
   flex-shrink: 0;
-  min-width: 100%;
-  animation: scroll-left-infinite 10s linear infinite;
+  width: max-content;
+  animation: scroll-left-infinite 15s linear infinite; */
+
+  display: flex;
+  width: max-content; /* Critical: tells the container to be as wide as ALL icons */
+  gap: 4rem; 
+  
+  
+  /* GPU Acceleration - This stops the 'stutter' */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  
+  /* Increase the time (e.g., 40s) to make it smoother. 
+     Too fast = Jittery. Too slow = Boring. */
+  animation: scroll-left-infinite 15s linear infinite;
 }
 
 .marquee-pair {
-  display: flex;
+  /* display: flex;
   align-items: center;
   gap: 12px;
-  white-space: nowrap;
+  white-space: nowrap; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .marquee-text {
@@ -187,20 +211,25 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* --- Add this back to see your icons --- */
+
 .marquee-pair svg, 
 .marquee-pair img {
-  width: 28px;  /* Adjust size as you like */
+  width: 28px;  
   height: 28px;
   flex-shrink: 0;
   display: block;
-  /* If your icons are too dark, uncomment the line below */
-  /* filter: brightness(0) invert(1); */
+ 
 }
 
 @keyframes scroll-left-infinite {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    /* Because we doubled the icons, moving -50% 
+       brings us exactly to the start of the second set. */
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 /* --- Nav Dock --- */
@@ -291,14 +320,14 @@ body {
   transition: 0.2s;
 }
 
-/* Dark GitHub Style */
+
 .btn-github {
   background: #111;
   color: #fff;
   border: 1px solid var(--border);
 }
 
-/* Bright Website Style */
+
 .btn-website {
   background: #ffffff;
   color: #000;
@@ -502,7 +531,7 @@ body.light-theme {
 } */
 
 .grid-item, .list-item {
-  background: rgba(255, 255, 255, 0.03) !important; /* Replaces var(--card) */
+  background: rgba(255, 255, 255, 0.03) !important; 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -760,10 +789,7 @@ body.light-theme {
 .writing-card-vertical:hover {
   background: rgba(255, 255, 255, 0.04) !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
-  
-  /* Same zoom effect yahan bhi */
   transform: translateY(-8px) scale(1.02);
-  
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -1216,7 +1242,7 @@ body.light-theme {
 
   .marquee-content {
     gap: 2.5rem;
-    animation-duration: 5s;
+    animation-duration: 10s;
   }
 
   .marquee-text {

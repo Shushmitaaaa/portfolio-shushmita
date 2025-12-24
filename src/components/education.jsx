@@ -1,3 +1,5 @@
+import eduImg from '../assets/cit.jfif';
+
 export default function Education() {
   return (
     <section className="education-section" style={{marginTop: '20px'}}>
@@ -6,7 +8,7 @@ export default function Education() {
       <div className="simple-item">
         <div className="item-main-row">
           <div className="org-logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdQQRGJJssRA5GFHJDAGWIbJOmlfdfUGSp0Q&s" alt="College" />
+            <img src={eduImg} alt="College" />
           </div>
           <div className="item-info">
             <div className="item-header-top">

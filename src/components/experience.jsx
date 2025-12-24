@@ -1,4 +1,5 @@
 import React from 'react';
+import expImg from '../assets/isro.jfif';
 
 export default function Experience() {
   return (
@@ -8,7 +9,7 @@ export default function Experience() {
       <div className="simple-item">
         <div className="item-main-row">
           <div className="org-logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcHHP28T27cC4skKqLxNFP0U4iNyqKhh8bKA&s" alt="ISRO" />
+            <img src={expImg} alt="ISRO" />
           </div>
 
           <div className="item-info">
