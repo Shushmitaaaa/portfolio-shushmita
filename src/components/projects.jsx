@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import ttImg from '../assets/susjobs.png';
 import moviehuntImg from '../assets/moviee.png';
 import bmiImg from '../assets/bmiii.png';
@@ -6,16 +7,18 @@ import susJobsImg from '../assets/susjobss.png';
 import authImg from '../assets/auth.png';
 import pImg from '../assets/ppre.png';
 import cliImg from '../assets/clii.png';
+import emailImg from '../assets/email.avif';
 
 
 const projectList = [
-  { name: "SusJobs", category: "major", tags: ["Rust", "CLI"], desc: "A version control system for Spotify playlists. Built with Rust for high-performance terminal UI interaction.", image: susJobsImg,website:"susjobs-3.onrender.com"},
+  { name: "SusJobs", category: "major", tags: ["Rust", "CLI"], desc: "An AI-powered Fake Job Detector that classifies job posts using a machine learning model and explains fraud risks with Gemini-2.5-Flash-Lite ,all from a single description.", image: susJobsImg,github:"https://github.com/Shushmitaaaa/SusJobs.git",website:"susjobs-3.onrender.com"},
   { name: "TubeTales", category: "major", tags: ["Python","Flask","Groq","Javascript","Llama 3"], desc: "An AI-Powered YouTube video Summarizer using LLaMA 3 (70B) on Groq LLM.", image: ttImg,github:"https://github.com/Shushmitaaaa/Tubetales.git",website:"https://tubetales-1.onrender.com/" },
-  { name: "DocBot", category: "major", tags: ["Rust", "Security"], desc: "An AI-powered medical chatbot that predicts possible diseases based on user symptoms", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600",github:"https://github.com/Shushmitaaaa/DocBot.git",website:"https://github.com/Shushmitaaaa/DocBot.git" },
+  // { name: "DocBot", category: "major", tags: ["Rust", "Security"], desc: "An AI-powered medical chatbot that predicts possible diseases based on user symptoms", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600",github:"https://github.com/Shushmitaaaa/DocBot.git",website:"https://github.com/Shushmitaaaa/DocBot.git" },
   { name: "MovieHunt", category: "major", tags: ["React.js", "JavaScript","TMDB API","Appwrite"], desc: "A movie search app which helps in searching for a specific movies based on some filters.", image: moviehuntImg,github:"https://github.com/Shushmitaaaa/MovieHunt.git",website:"movie-hunt-ksh2.vercel.app/" },
-  { name: "Predictra", category: "fun", tags: ["HTML", "CSS","JavaScipt"], desc: "PREDICTRA uses machine learning to predict your placement chances based on your academics, skills, and projects.", image: pImg,github:"https://github.com/Shushmitaaaa/Tic-Tac-Toe.git",website:" https://shushmitaaaa.github.io/Tic-Tac-Toe/" },
-  { name: "Gmail-cleaner-cli", category: "fun", tags: ["JS", "Design"], desc: "A command-line tool to declutter your Gmail inbox by deleting or summarizing emails based on filters", image: cliImg ,github:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git",website:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git"},
+  { name: "Predictra", category: "fun", tags: ["HTML", "CSS","JavaScipt"], desc: "PREDICTRA uses machine learning to predict your placement chances based on your academics, skills, and projects.", image: pImg,github:"https://github.com/Shushmitaaaa/predictra-placement-predictor.git",website:" https://predictra-placement-predictor.onrender.com/" },
+  { name: "Gmail-cleaner-cli", category: "major", tags: ["JS", "Design"], desc: "A command-line tool to declutter your Gmail inbox by deleting or summarizing emails based on filters", image: cliImg ,github:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git",website:"https://github.com/Shushmitaaaa/gmail-cleaner-cli.git"},
   { name: "User-authentication-app", category: "fun", tags: ["SQL", "ETL"], desc: "A simple user authentication app that supports user signup, login, and protected routes using middleware-based authentication.", image: authImg,github:"https://github.com/Shushmitaaaa/user-authentication-app.git",website:"user-authentication-apps.onrender.com" },
+  { name: "Email-Spam-Detection", category: "fun", tags: ["HTML", "CSS","JavaScipt"], desc: "An AI tool that classifies emails into spam and non-spam categories enhancing email security and user experience.", image: emailImg,github:"https://github.com/Shushmitaaaa/email-spam-detection-ml.git",website:" https://email-spam-detection-ml-11.onrender.com/" },
   { name: "BMI-calculator", category: "fun", tags: ["HTML", "CSS","JavaScript"], desc: " Enter your height and weight to get your BMI along with a color-coded chart indicating your health category.", image:bmiImg,github:"https://github.com/Shushmitaaaa/BMI-calculator.git",website:" https://shushmitaaaa.github.io/BMI-calculator/" },
   
 ];

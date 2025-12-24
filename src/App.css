@@ -23,6 +23,7 @@ body {
   justify-content: center;
   overflow-x: hidden;
   padding: 0 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- Layout Container --- */
@@ -479,6 +480,14 @@ body {
   flex-direction: column;
   gap: 12px;
   width: 100%;
+}
+
+body.light-theme {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --text-main: #1a1a1a;
+  --text-dim: #4a4a4a;
 }
 
 /* .list-item {

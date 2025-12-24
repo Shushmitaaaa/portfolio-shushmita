@@ -4,11 +4,28 @@ import Experience from './components/experience'
 import Projects from './components/projects'
 import Skills from './components/skills'
 import Education from './components/education'
-import {useState} from 'react'
-import { Home, Github, Linkedin, Twitter, FileText, Moon } from 'lucide-react';
+import {useState,useEffect} from 'react'
+import { Home, Github, Linkedin, Twitter, FileText, Moon , Sun} from 'lucide-react';
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+
+  const toggleTheme = (e) => {
+    e.stopPropagation(); 
+    setIsDarkMode(!isDarkMode);
+  };
+
+  
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+    }
+  }, [isDarkMode]);
 
   const handleDockClick = () => {
     setIsExpanded(true);
@@ -19,20 +36,20 @@ function App() {
     {
       title: "First Salary",
       excerpt: "A reflection on milestones, financial independence, and that first taste of hard-earned reward...",
-      link: "https://quora.com/your-link-1",
+      link: "https://qr.ae/pCWrbN",
       date: "Nov 2024"
     },
     {
       title: "Hidden Aspiration",
       excerpt: "Beyond titles and career ladders—finding the intersection of passion, purpose, and tech.",
-      link: "https://quora.com/your-link-2",
-      date: "Sept 2024"
+      link: "https://qr.ae/pCWrbu",
+      date: "Jun 2025"
     },
     {
       title: "Love",
       excerpt: "Exploring the most complex human emotion through the lens of logic, art, and life experience.",
-      link: "https://quora.com/your-link-3",
-      date: "Jan 2025"
+      link: "https://qr.ae/pCWr5u",
+      date: "Jan 2024"
     }
   ];
   return (
@@ -102,15 +119,15 @@ function App() {
       >
         <a href="#" target="_blank" title="Home"><Home size={20} strokeWidth={2.2} /></a>
         <a href="https://github.com/Shushmitaaaa" target="_blank" title="GitHub"><Github size={20} strokeWidth={2.2} /></a>
-        <a href="#" target="_blank" title="LinkedIn"><Linkedin size={20} strokeWidth={2.2} /></a>
-        <a href="#" target="_blank" title="X (Twitter)"><Twitter size={20} strokeWidth={2.2} /></a>
-        <a href="#" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
+        <a href="https://www.linkedin.com/in/shushmita-tiwari-811906273/" target="_blank" title="LinkedIn"><Linkedin size={20} strokeWidth={2.2} /></a>
+        <a href="https://x.com/Shushmitaaa?s=20" target="_blank" title="X (Twitter)"><Twitter size={20} strokeWidth={2.2} /></a>
+        <a href="https://docs.google.com/document/d/1XyXxkW0EErA7YSo33wk-UqBpbJREWd6ow-tbXYCv3y0/edit?usp=sharing" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
         
         <span className="separator"></span>
         
-        <button className="theme-toggle" title="Toggle Theme">
-          <Moon size={20} strokeWidth={2.2} />
-        </button>
+        <button className="theme-toggle" title="Toggle Theme" onClick={toggleTheme}>
+      {isDarkMode ? <Sun size={20} strokeWidth={2.2} /> : <Moon size={20} strokeWidth={2.2} />}
+    </button>
       </nav>
     </div>
   )
