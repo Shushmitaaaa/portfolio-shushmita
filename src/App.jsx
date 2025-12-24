@@ -121,7 +121,7 @@ function App() {
         <a href="https://github.com/Shushmitaaaa" target="_blank" title="GitHub"><Github size={20} strokeWidth={2.2} /></a>
         <a href="https://www.linkedin.com/in/shushmita-tiwari-811906273/" target="_blank" title="LinkedIn"><Linkedin size={20} strokeWidth={2.2} /></a>
         <a href="https://x.com/Shushmitaaa?s=20" target="_blank" title="X (Twitter)"><Twitter size={20} strokeWidth={2.2} /></a>
-        <a href="https://docs.google.com/document/d/1XyXxkW0EErA7YSo33wk-UqBpbJREWd6ow-tbXYCv3y0/edit?usp=sharing" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
+        <a href="resume_shushmita.pdf" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
         
         <span className="separator"></span>
         

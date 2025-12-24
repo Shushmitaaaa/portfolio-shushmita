@@ -515,7 +515,14 @@ body.light-theme {
 .grid-item:hover, .list-item:hover {
   background: rgba(255, 255, 255, 0.05) !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.02); 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.grid-item:active, .list-item:active {
+  transform: translateY(-4px) scale(0.98);
+  transition: 0.1s;
 }
 
 .list-item .item-img {
@@ -750,6 +757,16 @@ body.light-theme {
   transform: translateX(12px); 
 } */
 
+.writing-card-vertical:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  
+  /* Same zoom effect yahan bhi */
+  transform: translateY(-8px) scale(1.02);
+  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
 .thread-item:hover .thread-dot {
   background: var(--text-main);
   border-color: var(--text-main);
@@ -818,9 +835,9 @@ body.light-theme {
 }
 
 
-.writing-card-vertical:hover .writing-card-title {
+/* .writing-card-vertical:hover .writing-card-title {
   color: #ffd1dc; 
-}
+} */
 
 
 .contact-section {
