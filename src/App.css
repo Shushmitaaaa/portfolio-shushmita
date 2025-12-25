@@ -1029,7 +1029,7 @@ body.light-theme {
   
   .marquee-content {
     gap: 3rem; 
-    animation-duration: 40s !important; 
+    animation-duration: 50s !important; 
   }
 
   .marquee-content.reverse {
