@@ -108,10 +108,10 @@ function App() {
           <div className="contact-badge">Contact</div>
           <h2 className="contact-title">Let's get in touch!</h2>
           <p className="contact-subtitle">
-            If you have any inquiries, please feel free to reach out. You can contact me via {" "}
-            <a href="shushmitatiwari718@gmail.com" target="_blank" rel="noreferrer">
-              email.
-            </a>{" "}
+            If you have any inquiries, please feel free to reach out. You can contact me via mail at &nbsp;    
+            <a href="shushmitatiwari718@gmail.com" >
+              shushmitatiwari718@gmail.com
+            </a>
            
           </p>
         </section>

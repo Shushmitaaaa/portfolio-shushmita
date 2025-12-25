@@ -1032,6 +1032,11 @@ body.light-theme {
     animation-duration: 30s !important; 
   }
 
+  .marquee-content.reverse {
+  animation-duration: 30s !important; 
+}
+
+
   
   @keyframes scroll-left-infinite {
     0% {
