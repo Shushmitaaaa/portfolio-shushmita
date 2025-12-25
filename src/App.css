@@ -26,7 +26,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- Layout Container --- */
+
 .portfolio-wrapper {
   max-width:800px;
   margin-top: 40px ;
@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--gap-between-sections);
-  /* margin-left: 70px;  */
+
 }
 
 .skill-part{
@@ -58,7 +58,7 @@ body {
   height: 90px;
   border-radius: 50%;
   border: 2px solid var(--border);
-  padding: 4px; /* Creates a nice ring effect */
+  padding: 4px; 
   object-fit: cover;
   background: linear-gradient(145deg, #1e1e1e, #0a0a0a);
 }
@@ -78,14 +78,9 @@ body {
   margin-bottom: -5px;
 }
 
-/* .tagline {
-  font-size: 1rem;
-  color: var(--text-dim);
-  font-weight: 400;
-  opacity: 0.9;
-} */
 
 .command-bar {
+  position: relative; 
   display: inline-flex;
   align-items: center;
   background: #161616;
@@ -98,11 +93,41 @@ body {
   transition: all 0.2s;
   align-self: flex-start;
   margin-top: 4px;
+  overflow: hidden; 
 }
 
 .command-bar:hover {
   background: #1a1a1a;
   border-color: rgba(255, 255, 255, 0.15);
+}
+
+
+.neural-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.3;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cpath d='M0 20 L10 15 L20 25 L30 10 L40 18 L50 5 L60 22 L70 12 L80 20 L90 8 L100 15' fill='none' stroke='%2300ff88' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 150px 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+
+}
+
+.outlier-text {
+  position: relative;
+  z-index: 2; 
+}
+
+.command-bar:hover .neural-nodes {
+  opacity: 0.6;
+  animation: scrollGraph 5s linear infinite;
+}
+
+@keyframes scrollGraph {
+  from { background-position: 0% center; }
+  to { background-position: 100% center; }
 }
 
 /* --- About Section --- */
@@ -131,94 +156,62 @@ body {
   margin-top: 0;
 }
 
-/* --- Skills Section --- */
+
+
+/* --- Skills Section Styles --- */
+
+.skill-part {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .section-title-skill {
-  color: var(--text-main);
-  font-size: 1.2rem !important;
+  color: var(--text-main, #ffffff);
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  margin-bottom: 10px;
-  margin-top: 30px;
+  margin-bottom: 24px;
 }
 
 .skills-bento-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: 30px 0; 
-  overflow: hidden;
-  position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .marquee-container {
-  /* width: 100%;
-  display: flex;
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); */
   width: 100%;
   overflow: hidden;
   position: relative;
-  /* Fades the edges so icons don't just 'pop' out of existence */
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .marquee-content {
-  /* display: flex;
-  gap: 4rem; 
-  flex-shrink: 0;
-  width: max-content;
-  animation: scroll-left-infinite 15s linear infinite; */
-
   display: flex;
-  width: max-content; /* Critical: tells the container to be as wide as ALL icons */
-  gap: 4rem; 
-  
-  
-  /* GPU Acceleration - This stops the 'stutter' */
+  width: max-content;
+  gap: 4rem;
   will-change: transform;
-  transform: translate3d(0, 0, 0);
-  
-  /* Increase the time (e.g., 40s) to make it smoother. 
-     Too fast = Jittery. Too slow = Boring. */
-  animation: scroll-left-infinite 15s linear infinite;
+  animation: scroll-left-infinite 40s linear infinite;
+}
+
+.marquee-content.reverse {
+  animation: scroll-right-infinite 43s linear infinite;
 }
 
 .marquee-pair {
-  /* display: flex;
-  align-items: center;
-  gap: 12px;
-  white-space: nowrap; */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
 .marquee-text {
-  color: var(--text-main);
+  color: var(--text-main, #ffffff);
   font-size: 1.05rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-
-.marquee-pair svg, 
-.marquee-pair img {
-  width: 28px;  
-  height: 28px;
-  flex-shrink: 0;
-  display: block;
- 
 }
 
 @keyframes scroll-left-infinite {
@@ -226,11 +219,21 @@ body {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    /* Because we doubled the icons, moving -50% 
-       brings us exactly to the start of the second set. */
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-200%, 0, 0);
   }
 }
+
+@keyframes scroll-right-infinite {
+  0% {
+    transform: translate3d(-200%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
 
 /* --- Nav Dock --- */
 .nav-dock {
@@ -254,7 +257,7 @@ body {
 .nav-dock a, 
 .nav-dock button {
   all: unset; 
-  width: 40px;
+  width: 50px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -290,6 +293,7 @@ body {
   padding: 40px 0;
   max-width: 900px;
   margin: 0 auto;
+  margin-top: -60px;
   
 }
 
@@ -458,29 +462,12 @@ body {
   color: #000; 
 }
 
-/* .layout-switcher button { 
-  padding: 4px 10px; 
-  font-size: 1rem; 
-}
-
-.layout-switcher button.active { 
-  background: #1a1a1a; 
-  color: #fff; 
-  border-radius: 6px; 
-} */
-
 .viewport-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-/* .grid-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  overflow: hidden;
-} */
 
 .grid-item .item-img { 
   aspect-ratio: 16/10; 
@@ -519,16 +506,7 @@ body.light-theme {
   --text-dim: #4a4a4a;
 }
 
-/* .list-item {
-  display: flex;
-  align-items: center;
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 12px 20px;
-  border-radius: 16px;
-  width: 100%;
-  box-sizing: border-box;
-} */
+
 
 .grid-item, .list-item {
   background: rgba(255, 255, 255, 0.03) !important; 
@@ -601,13 +579,7 @@ body.light-theme {
   flex-wrap: wrap;
 }
 
-/* .tag { 
-  font-size: 0.65rem; 
-  background: #000; 
-  padding: 2px 8px; 
-  border-radius: 4px; 
-  border: 1px solid var(--border); 
-} */
+
 
 .tag {
   font-size: 0.7rem;
@@ -647,7 +619,7 @@ body.light-theme {
   to { opacity: 1; } 
 }
 
-/* experience section */
+
 .simple-item {
   width: 100%;
   padding: 10px 0;
@@ -707,7 +679,7 @@ body.light-theme {
   white-space: nowrap;
 }
 
-/* writings section */
+
 .writings-section {
   padding: 30px 0 0 0; 
   width: 100%;
@@ -721,17 +693,6 @@ body.light-theme {
   margin-bottom: 30px; 
 }
 
-.contact-write-badge{
-  background: var(--text-main);
-  color: var(--bg);
-  padding: 4px 12px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  letter-spacing: 0.05em;
-}
-
 .writings-thread {
   width: 100%;
   max-width: 810px; 
@@ -739,6 +700,7 @@ body.light-theme {
   flex-direction: column;
   position: relative;
 }
+
 
 .thread-item {
   display: flex;
@@ -767,30 +729,62 @@ body.light-theme {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.contact-write-badge{
+  background: var(--text-main);
+  color: var(--bg);
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  letter-spacing: 0.05em;
+}
+
+
 .writing-card-vertical {
   flex: 1;
-  background: rgba(18, 18, 18, 0.4);
-  border: 1px solid var(--border);
-  padding: 24px;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px; 
+  border-radius: 20px; 
   text-decoration: none;
   display: flex;
   flex-direction: column;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-/* .writing-card-vertical:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(12px); 
-} */
+
+.writing-card-vertical::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.12;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.card-salary::before { background: #ffd700; }    
+.card-aspiration::before { background: #00d2ff; } 
+.card-love::before { background: #ff758c; }       
 
 .writing-card-vertical:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px); 
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.writing-card-vertical:hover::before {
+  opacity: 0.25;
 }
 
 .thread-item:hover .thread-dot {
@@ -800,29 +794,6 @@ body.light-theme {
   transform: scale(1.3);
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.writing-tag {
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.08);
-  padding: 3px 10px;
-  border-radius: 6px;
-}
-
-.writing-date {
-  font-size: 0.75rem;
-  color: #555;
-  font-family: monospace;
-}
 
 .writing-card-title {
   color: var(--text-main);
@@ -830,6 +801,7 @@ body.light-theme {
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.3;
+  z-index: 1;
 }
 
 .writing-excerpt {
@@ -837,33 +809,41 @@ body.light-theme {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 18px;
+  z-index: 1;
 }
 
 .read-link {
   font-size: 0.85rem;
-  color: var(--text-main);
   font-weight: 600;
-  opacity: 0.5;
   display: flex;
   align-items: center;
   gap: 5px;
-  transition: opacity 0.2s;
+  transition: gap 0.3s;
+  z-index: 1;
 }
 
 
+.card-salary .read-link { color: #ffd700; }
+.card-aspiration .read-link { color: #00d2ff; }
+.card-love .read-link { color: #ff758c; }
 
-.writing-card-vertical:hover {
-  
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.writing-card-vertical:hover .read-link {
+  gap: 10px;
 }
 
 
-/* .writing-card-vertical:hover .writing-card-title {
-  color: #ffd1dc; 
-} */
+.card-header {
+  display: flex;
+  justify-content: flex-end; 
+  margin-bottom: 12px;
+  z-index: 1;
+}
+
+.writing-date {
+  font-size: 0.75rem;
+  color: #555;
+  font-family: monospace;
+}
 
 
 .contact-section {
@@ -914,7 +894,7 @@ body.light-theme {
   border-bottom: 1px solid #3b82f6;
 }
 
-/* --- Responsive Design --- */
+
 @media (max-width: 768px) {
   body {
     padding: 0 15px;
@@ -1041,6 +1021,48 @@ body.light-theme {
     gap:12px !important;
   }
 
+  .skills-bento-box {
+    margin-top: -30px; 
+    gap: 1rem;
+  }
+
+  
+  .marquee-content {
+    gap: 3rem; 
+    animation-duration: 30s !important; 
+  }
+
+  
+  @keyframes scroll-left-infinite {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      
+      transform: translate3d(-200%, 0, 0);
+    }
+  }
+
+  @keyframes scroll-right-infinite {
+    0% {
+      transform: translate3d(-200%, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  
+  .marquee-pair svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .marquee-text {
+    font-size: 0.9rem !important;
+  }
+
+
   .item-date{
     margin-top: -5px;
   }
@@ -1057,8 +1079,8 @@ body.light-theme {
   }
 
   .hero-info h1 {
-    font-size: clamp(1.3rem, 6vw, 1.8rem); /* Shrinks automatically so it NEVER pushes the screen */
-    word-break: break-word; /* Forces it to wrap if the name is too long */
+    font-size: clamp(1.3rem, 6vw, 1.8rem); 
+    word-break: break-word; 
     max-width: 100%;
   }
   
@@ -1069,7 +1091,7 @@ body.light-theme {
   
 
   .hero-info {
-    min-width: 0; /* This is the "magic" fix that lets text shrink inside Flexbox */
+    min-width: 0; 
     flex: 1;
   }
 
@@ -1122,22 +1144,22 @@ body.light-theme {
     align-items: center !important;
     padding: 8px 12px !important;
     gap: 10px !important;
-    background: rgba(255, 255, 255, 0.03) !important; /* Glass look for the box too */
+    background: rgba(255, 255, 255, 0.03) !important; 
     backdrop-filter: blur(10px);
   }
 
-  /* 2. Remove the Layout Switcher (Grid/List icons) */
+ 
   .layout-switcher {
     display: none !important;
   }
 
-  /* 3. Adjust Search Wrapper to share space */
+ 
   .search-wrapper {
-    flex: 1 !important; /* Takes up remaining space */
-    min-width: 0; /* Prevents text from pushing the pill out */
+    flex: 1 !important; 
+    min-width: 0; 
   }
 
-  /* Hide the terminal prefix on small screens to save space if needed */
+  
   .terminal-prefix {
     font-size: 0.8rem !important;
   }
@@ -1147,18 +1169,17 @@ body.light-theme {
     width: 100%;
   }
 
-  /* 4. Keep the Major/Fun toggle on the same line */
+  
   .controls-right {
-    width: auto !important; /* Allows it to sit next to search */
-    flex-shrink: 0; /* Prevents the pill from squishing */
+    width: auto !important; 
+    flex-shrink: 0;
   }
 
   .toggle-pill {
     width: 120px !important; 
     height: 32px !important;
-    /* margin: 0 !important; */
     margin-left: 22px;
-    /* margin-right: -30px; */
+    
   }
 
   .toggle-pill button {
@@ -1169,7 +1190,7 @@ body.light-theme {
     height: calc(100% - 4px) !important;
   }
 
-  /* 5. Clean up the layout switcher icons */
+
   .layout-switcher {
     padding: 2px !important;
   }
@@ -1182,19 +1203,19 @@ body.light-theme {
 
 
   .nav-dock {
-    bottom: 20px; /* Moves it slightly up from the very edge */
-    padding: 8px 12px; /* Better internal spacing */
-    transform: translateX(-50%); /* Removed scale() */
-    gap: 8px; /* Increased gap for better touch targets */
+    bottom: 20px; 
+    padding: 8px 12px; 
+    transform: translateX(-50%); 
+    gap: 8px;
     width: auto;
     max-width: 80%;
     border-radius: 20px;
-    background: rgba(18, 18, 18, 0.9); /* Slightly more solid for readability */
+    background: rgba(18, 18, 18, 0.9); 
   }
 
   .nav-dock a,
   .nav-dock button {
-    width: 38px; /* Slightly larger for easier tapping */
+    width: 38px; 
     height: 38px;
   }
 
@@ -1226,14 +1247,14 @@ body.light-theme {
     margin-bottom: 7px;
   }
 
-  /* Target the writing badge specifically to add that gap */
+  
   .contact-write-badge {
     font-size: 0.7rem;
     padding: 3px 10px;
-    margin-bottom: 29px !important; /* This creates the gap you need */
+    margin-bottom: 29px !important; 
   }
 
-  /* Also, ensure the header title below it has some breathing room */
+ 
   .writing-header .header-title {
     margin-top: 10px;
     line-height: 1.2;
@@ -1268,15 +1289,13 @@ body.light-theme {
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Change this: Reduced top from 90 to 60, bottom from 100 to 40 */
   padding: 40px 0 40px 0; 
   width: 100%;
 }
 
-/* --- Inside the @media (max-width: 768px) block --- */
+
 .portfolio-wrapper {
   margin-left: 0 !important;
-  /* Change this: Reduced 120px to 80px */
   padding: 20px 0 80px 0; 
   gap: 25px;
 }
@@ -1290,7 +1309,7 @@ body.light-theme {
   }
 }
 
-/* --- THE EMERGENCY OVERFLOW FIX --- */
+
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
@@ -1298,18 +1317,18 @@ html, body {
 }
 
 * {
-  max-width: 100%; /* Prevents any single element from being wider than the phone */
+  max-width: 100%; 
   box-sizing: border-box;
 }
 
 @media (max-width: 400px) {
   .hero-container {
-    gap: 12px !important; /* Tighten gap so things fit side-by-side */
+    gap: 12px !important; 
   }
   
   .nav-dock {
-    width: 95%; /* Prevent dock from hitting screen edges */
+   
     bottom: 10px;
-    transform: translateX(-50%) scale(0.8); /* Make it smaller so it doesn't look cluttered */
+    transform: translateX(-50%) scale(0.8); 
   }
 }

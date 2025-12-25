@@ -15,8 +15,8 @@ export default function Experience() {
           <div className="item-info">
             <div className="item-header-top">
               <div className="title-group">
-                <h3>INDIAN SPACE RESEARCH ORGANISATION</h3>
-                <span className="org-name">Machine Learning Intern</span>
+                <h3>Indian Space Research Organization</h3>
+                <span className="org-name">Research Intern | Machine Learning</span>
               </div>
               <span className="item-date">Oct 2025 — Present</span>
             </div>

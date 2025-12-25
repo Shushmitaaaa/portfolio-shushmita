@@ -35,21 +35,24 @@ function App() {
   const writings = [
     {
       title: "First Salary",
-      excerpt: "A reflection on milestones, financial independence, and that first taste of hard-earned reward...",
+      excerpt: "A reflection of financial independence, and that first taste of hard-earned reward.",
       link: "https://qr.ae/pCWrbN",
-      date: "Nov 2024"
+      date: "Nov 2024",
+      bgClass: "card-salary"
     },
     {
       title: "Hidden Aspiration",
       excerpt: "Beyond titles and career ladders—finding the intersection of passion, purpose, and tech.",
       link: "https://qr.ae/pCWrbu",
-      date: "Jun 2025"
+      date: "Jun 2025",
+      bgClass: "card-aspiration"
     },
     {
       title: "Love",
       excerpt: "Exploring the most complex human emotion through the lens of logic, art, and life experience.",
       link: "https://qr.ae/pCWr5u",
-      date: "Jan 2024"
+      date: "Jan 2024",
+      bgClass: "card-love"
     }
   ];
   return (
@@ -87,7 +90,7 @@ function App() {
               <div className="thread-line">
                 <div className="thread-dot"></div>
               </div>
-              <a href={post.link} target="_blank" className="writing-card-vertical">
+              <a href={post.link} target="_blank" className={`writing-card-vertical ${post.bgClass}`} >
                 <div className="card-header">
                   <span className="writing-tag">{post.tag}</span>
                   <span className="writing-date">{post.date}</span>
@@ -117,17 +120,12 @@ function App() {
         className={`nav-dock ${isExpanded ? 'dock-expand' : ''}`}
         onClick={handleDockClick}
       >
-        <a href="#" target="_blank" title="Home"><Home size={20} strokeWidth={2.2} /></a>
+        <a href="/" title="Home"><Home size={20} strokeWidth={2.2} /></a>
         <a href="https://github.com/Shushmitaaaa" target="_blank" title="GitHub"><Github size={20} strokeWidth={2.2} /></a>
         <a href="https://www.linkedin.com/in/shushmita-tiwari-811906273/" target="_blank" title="LinkedIn"><Linkedin size={20} strokeWidth={2.2} /></a>
         <a href="https://x.com/Shushmitaaa?s=20" target="_blank" title="X (Twitter)"><Twitter size={20} strokeWidth={2.2} /></a>
         <a href="resume_shushmita.pdf" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
         
-        <span className="separator"></span>
-        
-        <button className="theme-toggle" title="Toggle Theme" onClick={toggleTheme}>
-      {isDarkMode ? <Sun size={20} strokeWidth={2.2} /> : <Moon size={20} strokeWidth={2.2} />}
-    </button>
       </nav>
     </div>
   )
