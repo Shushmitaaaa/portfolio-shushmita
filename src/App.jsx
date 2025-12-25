@@ -63,10 +63,7 @@ function App() {
       <section className="about-section" >
         <p className="section-title" >About</p>
         <p className="about-text">
-          I like building things with code and figuring out how they actually work.
-          Right now, I’m deep into machine learning and the magic of teaching machines to think.
-          I love working on projects that feel real, not just done for the sake of it.
-          When I’m not coding, I’m usually writing messy, honest stuff on Quora or Medium, very active on X.
+          I like building things and figuring out how they actually work under the hood. Right now, I’m deep into machine learning,exploring the magic of teaching machines to think. I’m driven by projects that have a life outside the terminal and solve real problems for real people. When I’m not coding, I am mostly found scribbling under the roof of quora or medium,very active on X.
         </p>
       </section>
 
