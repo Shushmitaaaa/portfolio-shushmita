@@ -4,8 +4,8 @@ import Experience from './components/experience'
 import Projects from './components/projects'
 import Skills from './components/skills'
 import Education from './components/education'
-import {useState,useEffect} from 'react'
-import { Home, Github, Linkedin, Twitter, FileText, Moon , Sun} from 'lucide-react';
+import { useState, useEffect } from 'react'
+import { Home, Github, Linkedin, Twitter, FileText, Moon, Sun } from 'lucide-react';
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -14,11 +14,11 @@ function App() {
 
 
   const toggleTheme = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setIsDarkMode(!isDarkMode);
   };
 
-  
+
   useEffect(() => {
     if (isDarkMode) {
       document.body.classList.remove('light-theme');
@@ -58,8 +58,8 @@ function App() {
   return (
     <div className="portfolio-wrapper">
       <Hero />
-      
-      
+
+
       <section className="about-section" >
         <p className="section-title" >About</p>
         <p className="about-text">
@@ -67,13 +67,13 @@ function App() {
         </p>
       </section>
 
-      <Experience /> 
+      <Experience />
 
       <Education />
 
       <Skills />
-      
-      <Projects />   
+
+      <Projects />
 
       <section className="writings-section">
         <div className="writing-header">
@@ -102,18 +102,18 @@ function App() {
       </section>
 
       <section className="contact-section">
-          <div className="contact-badge">Contact</div>
-          <h2 className="contact-title">Let's get in touch!</h2>
-          <p className="contact-subtitle">
-            If you have any inquiries, please feel free to reach out. You can contact me via mail at &nbsp;    
-            <a href="shushmitatiwari718@gmail.com" >
-              shushmitatiwari718@gmail.com
-            </a>
-           
-          </p>
-        </section>
+        <div className="contact-badge">Contact</div>
+        <h2 className="contact-title">Let's get in touch!</h2>
+        <p className="contact-subtitle">
+          If you have any inquiries, please feel free to reach out. You can contact me via mail at &nbsp;
+          <a href="shushmitatiwari718@gmail.com" >
+            shushmitatiwari718@gmail.com
+          </a>
 
-      <nav 
+        </p>
+      </section>
+
+      <nav
         className={`nav-dock ${isExpanded ? 'dock-expand' : ''}`}
         onClick={handleDockClick}
       >
@@ -121,8 +121,8 @@ function App() {
         <a href="https://github.com/Shushmitaaaa" target="_blank" title="GitHub"><Github size={20} strokeWidth={2.2} /></a>
         <a href="https://www.linkedin.com/in/shushmita-tiwari-811906273/" target="_blank" title="LinkedIn"><Linkedin size={20} strokeWidth={2.2} /></a>
         <a href="https://x.com/Shushmitaaa?s=20" target="_blank" title="X (Twitter)"><Twitter size={20} strokeWidth={2.2} /></a>
-        <a href="resume_shushmita.pdf" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
-        
+        <a href="https://docs.google.com/document/d/1MWaKA1RaWKKTLcQnjEWDrYZXd7VImLuaqXgLZzmM0O8/edit?usp=drive_link" target="_blank" title="Resume"><FileText size={20} strokeWidth={2.2} /></a>
+
       </nav>
     </div>
   )
